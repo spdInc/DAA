@@ -1,0 +1,20 @@
+Greedy Approach in DAA (Design and Analysis of Algorithms) is an algorithmic paradigm that follows the principle of making the locally optimal choice at each step with the hope of finding a global optimum. In other words, it works by making the best choice at each step, without considering the future consequences of those choices.
+
+Greedy algorithms are often used to solve optimization problems, such as finding the shortest path between two points, finding the maximum profit from a set of transactions, or finding the minimum cost of spanning a network.
+
+To design a greedy algorithm, we need to:
+
+Identify the optimization objective, i.e., what we are trying to maximize or minimize.
+Decompose the problem into a sequence of smaller subproblems.
+Develop a greedy heuristic for each subproblem.
+Combine the solutions to the subproblems to obtain a solution to the original problem.
+Greedy algorithms are often simple and efficient to implement. However, they do not always produce the optimal solution. In some cases, they can produce very poor solutions.
+
+Here are some examples of problems that can be solved using a greedy approach:
+
+Activity selection problem: Given a set of activities with start and end times, find the maximum number of activities that can be scheduled without any overlap.
+Knapsack problem: Given a set of items with weights and values, and a knapsack with a limited capacity, find the subset of items that has the maximum total value and fits into the knapsack.
+Prim's algorithm: Given an undirected graph, find a minimum spanning tree of the graph.
+Kruskal's algorithm: Given an undirected graph, find a minimum spanning tree of the graph.
+Dijkstra's algorithm: Given a weighted graph and a source vertex, find the shortest path from the source vertex to all other vertices in the graph.
+Greedy algorithms are a powerful tool for solving optimization problems. However, it is important to be aware of their limitations. Greedy algorithms may not always produce the optimal solution, and their performance can vary depending on the specific problem being solved.
