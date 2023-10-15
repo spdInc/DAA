@@ -1,0 +1,43 @@
+Huffman coding is a lossless data compression algorithm that uses a greedy approach to assign variable-length codes to characters based on their frequency of occurrence. The more frequent a character is, the shorter its code will be. This results in a compressed representation of the data, which can be used to save space or reduce transmission time.
+
+The greedy approach used in Huffman coding works as follows:
+
+Create a priority queue containing all of the characters, with the most frequent characters at the front of the queue.
+While the priority queue contains more than one character:
+Remove the two characters with the lowest frequencies from the queue.
+Create a new internal node with a frequency equal to the sum of the two characters' frequencies.
+Make the first character the left child of the new node and the second character the right child.
+Add the new node to the priority queue.
+The remaining node in the priority queue is the root of the Huffman tree.
+Once the Huffman tree has been constructed, the code for each character can be determined by traversing the tree from the root to the leaf node containing the character. The code for a character is simply the sequence of bits traversed from the root to the leaf node, with a 0 bit representing a left traversal and a 1 bit representing a right traversal.
+
+For example, consider the following message:
+
+abracadabra
+The frequency of each character in the message is as follows:
+
+a: 5
+b: 2
+c: 1
+d: 1
+r: 1
+The Huffman tree for this message is shown below:
+
+            a (5)
+           / \
+          b (2) c (1)
+         / \
+        d (1) r (1)
+The code for each character is as follows:
+
+a: 0
+b: 10
+c: 110
+d: 1110
+r: 1111
+To encode the message, we simply replace each character with its corresponding code. The resulting encoded message is as follows:
+
+01011011101111
+To decode the message, we simply traverse the Huffman tree from the root to the leaf node corresponding to each bit in the encoded message. The character at the leaf node is the decoded character.
+
+Huffman coding is a very effective data compression algorithm, and it is widely used in many different applications, such as file compression, image compression, and data transmission.
