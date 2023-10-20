@@ -1,0 +1,54 @@
+Merge sort is a popular comparison-based sorting algorithm known for its efficiency and stability. It is a divide-and-conquer algorithm, which means it breaks down the sorting problem into smaller subproblems, sorts those subproblems, and then combines them to produce a sorted result. The basic idea behind merge sort is to repeatedly divide the input array into two halves, sort these halves, and then merge them back together.
+
+Here's a step-by-step explanation of how merge sort works:
+
+1. **Divide**: The input array is recursively divided into two halves until each subarray contains only one element. This is done by identifying the midpoint of the array and splitting it into two parts.
+
+2. **Conquer**: The subarrays are sorted. This can be done recursively, sorting the smaller subarrays first, and then merging them. The merge step is where the algorithm gets its name.
+
+3. **Merge**: The sorted subarrays are combined to produce a single sorted array. This is achieved by comparing elements from the two subarrays, taking the smaller one and moving it to the merged result. This process continues until all elements from both subarrays are merged into a single sorted array.
+
+The merge step is the key to merge sort's efficiency, as it takes advantage of the fact that merging two sorted arrays into one is a relatively straightforward operation and can be done in linear time.
+
+Merge sort has a time complexity of O(n log n), where "n" is the number of elements in the input array. It is stable, meaning that the relative order of equal elements is preserved after sorting. Additionally, it's suitable for both linked lists and arrays.
+
+Here's a simple example of merge sort in Python:
+
+```python
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+# Example usage:
+arr = [38, 27, 43, 3, 9, 82, 10]
+merge_sort(arr)
+print(arr)  # Output: [3, 9, 10, 27, 38, 43, 82]
+```
+
+In this example, the `merge_sort` function is used to sort an input array. It repeatedly divides the array and merges the sorted subarrays to produce the final sorted result.
